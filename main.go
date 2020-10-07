@@ -29,17 +29,17 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-// protoc-gen-godin is a plugin for the Google protocol buffer compiler to generate
+// protoc-gen-genki is a plugin for the Google protocol buffer compiler to generate
 // Go code.  Run it by building this program and putting it in your path with
 // the name
-// 	protoc-gen-godin
-// That word 'godin' at the end becomes part of the option string set for the
+// 	protoc-gen-genki
+// That word 'genki' at the end becomes part of the option string set for the
 // protocol compiler, so once the protocol compiler (protoc) is installed
 // you can run
-// 	protoc --godin_out=output_directory --go_out=output_directory input_directory/file.proto
-// to generate go-godin code for the protocol defined by file.proto.
+// 	protoc --genki_out=output_directory --go_out=output_directory input_directory/file.proto
+// to generate go-genki code for the protocol defined by file.proto.
 // With that input, the output will be written to
-// 	output_directory/file.godin.go
+// 	output_directory/file.genki.go
 //
 // The generated code is documented in the package comment for
 // the library.
@@ -53,8 +53,8 @@ import (
 	"os"
 
 	"github.com/golang/protobuf/proto"
-	"github.com/lukasjarosch/protoc-gen-godin/generator"
-	_ "github.com/lukasjarosch/protoc-gen-godin/plugin"
+	"github.com/lukasjarosch/protoc-gen-genki/generator"
+	_ "github.com/lukasjarosch/protoc-gen-genki/plugin"
 )
 
 func main() {

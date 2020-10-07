@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package godin.example;
+package genki.example;
 
-option go_package="github.com/lukasjarosch/godin/protoc-gen-godin/example;example";
+option go_package="github.com/lukasjarosch/genki/protoc-gen-genki/example;example";
 
 message Foo {
   string Bar = 1;

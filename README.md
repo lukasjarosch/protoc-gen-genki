@@ -1,9 +1,10 @@
-# protoc-gen-godin
+# protoc-gen-genki
 > Generate code to reduce gRPC layer boilerplate 
 
-
-### WORK IN PROGRESS
+## Install
+To install, just clone the repo, cd into it and do a `go install` which
+will install `protoc-gen-genki`.
 
 ## LICENSE
 
-protoc-gen-godin is a reuse of protoc-gen-go and maintains it's license
+protoc-gen-genki is a reuse of protoc-gen-go and maintains it's license
