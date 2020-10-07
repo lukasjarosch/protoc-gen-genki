@@ -1,5 +1,5 @@
 # protoc-gen-genki
-> Generate code to reduce gRPC layer boilerplate 
+> Generate code to reduce gRPC layer boilerplate
 
 ## Install
 To install, just clone the repo, cd into it and do a `go install` which
