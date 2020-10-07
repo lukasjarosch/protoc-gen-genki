@@ -40,7 +40,7 @@ func (g *genki) Generate(file *generator.FileDescriptor) {
 		// Factory function
 		g.P("func New", clientTypeName, "(address string) *", clientTypeName, " {")
 		g.P("c := genkiGrpcClient.NewClientWithAddress(\"", strings.ToLower(service.GetName()), "\", address)")
-		g.P("return &ExampleServiceGenkiClient{")
+		g.P("return &", clientTypeName, "{")
 		g.P("	cc: c,")
 		g.P("	service: New", clientInterfaceName, "(c.Connection()),")
 		g.P("}")
@@ -103,6 +103,8 @@ func (g *genki) GenerateImports(file *generator.FileDescriptor) {
 	g.P("genkiMeta \"github.com/lukasjarosch/genki/metadata\"")
 	g.P("genkiGrpcClient \"github.com/lukasjarosch/genki/client/grpc\"")
 	g.P("\"github.com/spf13/pflag\"")
+	g.P("context")
+	g.P("google.golang.org/grpc")
 	g.P(")")
 	g.P()
 }
