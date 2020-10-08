@@ -37,9 +37,19 @@ func (g *genki) Generate(file *generator.FileDescriptor) {
 		g.P("service ", clientInterfaceName)
 		g.P("}")
 
-		// Factory function
-		g.P("func New", clientTypeName, "(address string) *", clientTypeName, " {")
+		// Factory function with address
+		g.P("func New", clientTypeName, "WithAddr(address string) *", clientTypeName, " {")
 		g.P("c := genkiGrpcClient.NewClientWithAddress(\"", strings.ToLower(service.GetName()), "\", address)")
+		g.P("return &", clientTypeName, "{")
+		g.P("	cc: c,")
+		g.P("	service: New", clientInterfaceName, "(c.Connection()),")
+		g.P("}")
+		g.P("}")
+		g.P()
+
+		// Factory function with address from flags
+		g.P("func New", clientTypeName, "() *", clientTypeName, " {")
+		g.P("c := genkiGrpcClient.NewClient(\"", strings.ToLower(service.GetName()), "\")")
 		g.P("return &", clientTypeName, "{")
 		g.P("	cc: c,")
 		g.P("	service: New", clientInterfaceName, "(c.Connection()),")
