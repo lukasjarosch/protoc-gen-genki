@@ -103,8 +103,8 @@ func (g *genki) GenerateImports(file *generator.FileDescriptor) {
 	g.P("genkiMeta \"github.com/lukasjarosch/genki/metadata\"")
 	g.P("genkiGrpcClient \"github.com/lukasjarosch/genki/client/grpc\"")
 	g.P("\"github.com/spf13/pflag\"")
-	g.P("context")
-	g.P("google.golang.org/grpc")
+	g.P("\"context\"")
+	g.P("\"google.golang.org/grpc\"")
 	g.P(")")
 	g.P()
 }
