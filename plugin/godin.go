@@ -108,8 +108,9 @@ func (g *genki) Generate(file *generator.FileDescriptor) {
 
 		// func Flags *pflag.Flagset()
 		g.P("// Flags is a wrapper to the underlying genki client Flags() call")
-		g.P("func (client *", clientTypeName, ") Flags() *pflag.FlagSet {")
-		g.P("return client.cc.Flags()")
+		g.P("func GenkiClientFlags() *pflag.FlagSet {")
+		g.P("c := genkiGrpcClient.NewClient(\"", cleanServiceName, "\")")
+		g.P("return c.Flags()")
 		g.P("}")
 		g.P()
 
